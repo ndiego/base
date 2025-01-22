@@ -1,0 +1,191 @@
+<?php
+/**
+ * Base functions and definitions.
+ *
+ * @package Base
+ * @author  Nick Diego
+ * @license GNU General Public License v2 or later
+ * @link    https://github.com/ndiego/base
+ */
+
+if ( ! function_exists( 'base_setup' ) ) :
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @return void
+	 */
+	function base_setup() {
+
+		// Remove core block patterns from WordPress.org.
+		remove_theme_support( 'core-block-patterns' );
+	}
+
+endif;
+
+add_action( 'after_setup_theme', 'base_setup' );
+
+if ( ! function_exists( 'base_styles' ) ) :
+	/**
+	 * Enqueue main stylesheet.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @return void
+	 */
+	function base_styles() {
+
+		$theme_version  = wp_get_theme()->get( 'Version' );
+		$version_string = is_string( $theme_version ) ? $theme_version : false;
+
+		// Register theme stylesheet.
+		wp_register_style(
+			'base-style',
+			get_template_directory_uri() . '/style.css',
+			array(),
+			wp_get_theme()->get( 'Version' ),
+		);
+
+		// Enqueue theme stylesheet.
+		wp_enqueue_style( 'base-style' );
+	}
+
+endif;
+
+add_action( 'wp_enqueue_scripts', 'base_styles' );
+
+if ( ! function_exists( 'base_editor_styles' ) ) :
+	/**
+	 * Enqueue style.css into the editor.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @return void
+	 */
+	function base_editor_styles() {
+
+		// Enqueue editor styles.
+		add_editor_style( 'style.css' );
+	}
+
+endif;
+
+add_action( 'admin_init', 'base_editor_styles' );
+
+if ( ! function_exists( 'base_editor_scripts' ) ) :
+	/**
+	 * Add/remove block styles and variations.
+	 * 
+	 * @since 0.1.0
+	 *
+	 * @return void
+	 */
+	function base_editor_scripts() {
+
+		// WordPress core block styles can only be unregistered using JavaScript.
+		wp_enqueue_script( 
+			'base-block-styles-variations', 
+			get_template_directory_uri() . '/assets/js/block-styles-variations.js', 
+			array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+
+		// WordPress core block styles can only be unregistered using JavaScript.
+		wp_enqueue_script( 
+			'base-modify-block-supports', 
+			get_template_directory_uri() . '/assets/js/modify-block-supports.js', 
+			array(),
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+	}
+
+endif;
+
+add_action( 'enqueue_block_editor_assets', 'base_editor_scripts' );
+
+if ( ! function_exists( 'base_enqueue_block_stylesheets' ) ) :
+	/**
+	 * Enqueue individual block stylesheets.
+	 * Reference: https://make.wordpress.org/core/2021/12/15/using-multiple-stylesheets-per-block/
+	 *
+	 * @since 0.1.0
+	 */
+	function base_enqueue_block_stylesheets() {
+		// Get all CSS files from the blocks directory
+		$block_styles = glob( dirname( __FILE__ ) . '/assets/css/blocks/*.css' );
+		
+		foreach ( $block_styles as $style_path ) {
+			$filename = basename( $style_path, '.css' );
+			
+			// Split filename into block type and name
+			// e.g., 'core-buttons' becomes ['core', 'buttons']
+			$parts = explode( '-', $filename, 2 );
+			
+			if ( count( $parts ) !== 2 ) {
+				continue; // Skip if filename doesn't match expected format
+			}
+			
+			$block_type = $parts[0];    // 'core'
+			$block_name = $parts[1];    // 'buttons'
+			
+			// Enqueue individual block stylesheets
+			wp_enqueue_block_style(
+				$block_type . '/' . $block_name,
+				array(
+					'handle' => 'base-theme-' . $filename . '-styles',
+					'src'    => get_theme_file_uri( 'assets/css/blocks/' . $filename . '.css' ),
+					'path'   => get_theme_file_path( 'assets/css/blocks/' . $filename . '.css' ),
+				)
+			);
+		}
+	}
+
+endif;
+
+add_action( 'after_setup_theme', 'base_enqueue_block_stylesheets' );
+
+if ( ! function_exists( 'base_edit_comment_form_defaults' ) ) :
+	/**
+	 * Customize the comments form. 
+	 *
+	 * @since 0.1.0
+	 */
+	function base_edit_comment_form_defaults( $defaults ) {
+		$defaults[ 'title_reply' ] = __( 'Share your thoughts', 'base' );
+		return $defaults;
+	}
+
+endif;
+
+add_action( 'comment_form_defaults', 'base_edit_comment_form_defaults' );
+
+if ( ! function_exists( 'base_wrap_image_block' ) ) :
+	/**
+	 * Filter the output of an image block to wrap the <img> element in a <span>.
+	 * This is needed to apply image custom image borders on images with captions.
+	 *
+	 * @since 0.1.0
+	 */
+	function base_wrap_image_block( $block_content, $block ) {
+
+		// Check if the block content contains a <figcaption> element
+		if ( strpos( $block_content, 'figcaption' ) !== false ) {
+			
+			// Append the caption class to the block.
+			$p = new WP_HTML_Tag_Processor( $block_content );
+			if ( $p->next_tag() ) {
+				$p->add_class( 'has-caption' );
+			}
+			$block_content = $p->get_updated_html();
+			$block_content = preg_replace( '/(<img[^>]+>)/', '<span class="wp-block-image-container">$1</span>', $block_content );
+		}
+
+		return $block_content;
+	}
+
+endif;
+
+add_filter( 'render_block_core/image', 'base_wrap_image_block', 10, 2 );

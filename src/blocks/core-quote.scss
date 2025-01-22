@@ -1,0 +1,89 @@
+/* Quote Block
+----------------------------------------------------------------------------- */
+
+.wp-block-quote {
+    border-top: 2px solid var(--wp--preset--color--secondary);
+    border-bottom: 2px solid var(--wp--preset--color--secondary);
+    border-left: 0;
+    padding: 1.5rem 0 2rem 0;
+
+    p {
+        margin: 0;
+    }
+
+    /* Block Style: Plain
+     --------------------------------------------- */
+
+    &.is-style-plain {
+        padding: 0;
+    }
+
+    /* Block Style: Fancy
+     --------------------------------------------- */
+
+    &.is-style-fancy {
+        border: 0;
+        padding: 3.5rem 0 0.5rem 0;
+        position: relative;
+
+        &:before {
+            color: var(--wp--preset--color--secondary);
+            content: "“";
+            font-size: 6rem;
+            font-style: italic;
+            font-weight: 600;
+            line-height: 0;
+            position: absolute;
+            top: 3rem;
+            left: calc(50% - 2.75rem);
+        }
+
+        @media ( min-width: 600px ) {
+            padding: 1rem 0 0.5rem 3.25rem;
+    
+            &:before {
+                left: -0.5rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .wp-block-quote,
+    .wp-block-post-content > .wp-block-quote {
+        margin-top: calc(1.5 * var(--wp--style--block-gap));
+        margin-bottom: calc(1.5 * var(--wp--style--block-gap));
+    }
+}
+
+// If contained in a block with a background color, default to currentColor.
+.has-background .wp-block-quote {
+    border-color: currentColor;
+}
+
+// If contained in a block with a background color, default to currentColor.
+.has-background .wp-block-quote.is-style-fancy:before {
+    color: currentColor;
+    opacity: 0.4;
+}
+
+
+/* Quote block */
+
+.wp-block-quote cite {
+	color: var(--wp--preset--color--theme-6);
+	font-size: var(--wp--preset--font-size--small);
+	margin-top: var(--wp--preset--font-size--small) !important;
+}
+
+.wp-block-quote > * + * {
+	margin-block-start: var(--wp--style--block-gap);
+}
+
+.wp-block-quote *:first-of-type {
+	margin-top: 0;
+}
+
+.wp-block-quote *:last-of-type {
+	margin-bottom: 0;
+}

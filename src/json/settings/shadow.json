@@ -1,0 +1,17 @@
+{
+    "shadow": {
+        "defaultPresets": false,
+        "presets": [
+            {
+                "name": "Inset",
+                "shadow": "inset 0 0 0 1px var(--wp--preset--color--theme-3)",
+                "slug": "inset"
+            },
+            {
+                "name": "Inset 2",
+                "shadow": "inset 0 0 0 1px var(--wp--preset--color--theme-4)",
+                "slug": "inset-2"
+            }
+        ]
+    }
+} 

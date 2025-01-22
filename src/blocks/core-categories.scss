@@ -1,0 +1,90 @@
+/* Categories
+ ----------------------------------------------------------------------------- */
+
+.wp-block-categories {
+    &.wp-block-categories-list,
+    .wp-block-categories__list,
+    &.wp-block-categories-list li ul,
+    .wp-block-categories__list li ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem 0.7rem;
+        padding: 0;
+    }
+
+    &.wp-block-categories-list li,
+    .wp-block-categories__list li {
+
+        // Due to the fact that we cannot style the post count separately.
+        color: var(--wp--preset--color--theme-5);
+
+        // We have to manually set due to List block styling cascading into this block.
+        list-style: none;
+        margin: 0;
+    }
+
+    &.wp-block-categories-list li ul,
+    .wp-block-categories__list li ul {
+        padding-left: 1rem;
+        margin: 0.5rem 0 0;
+    }
+
+    /* Block Style: Horizontal
+     --------------------------------------------- */
+     
+    &.is-style-horizontal {
+        &.wp-block-categories-list,
+        .wp-block-categories__list {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        // The "Show hierarchy" option is not supported with the Horizontal style.
+        &.wp-block-categories-list li ul,
+        .wp-block-categories__list li ul {
+            display: none;
+        }
+    }
+
+    /* Block Style: Outline
+     -------------------------------------------- */
+     &.is-style-outline {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--wp--preset--spacing--10);
+
+        li {
+            background-color: var(--wp--preset--color--theme-1);
+            border: 1px solid var(--wp--preset--color--theme-4);
+            border-radius: var(--wp--custom--border--radius--button);
+            cursor: pointer;
+            display: inline-block;
+            font-size: var(--wp--preset--font-size--small) !important;
+            font-weight: normal;
+            line-height: var(--wp--custom--typography--line-height--small);
+            padding-right: 1.2em;
+            transition: box-shadow var(--wp--custom--transition--duration) ease-out;
+
+            a {
+                color: var(--wp--preset--color--primary);
+                display: inline-block;
+                padding: .8em 0 .8em 1.2em;
+                text-decoration: none;
+                text-transform: none;
+            }
+
+            &:hover {
+                box-shadow: var(--wp--preset--shadow--x-small);
+
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            .tag-link-count {
+                color: currentColor;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+/* Spacer
+ ----------------------------------------------------------------------------- */
+
+.wp-block-spacer {
+
+	// Utility classes for reducing the size of spacers on mobile.
+	@media (max-width: 781px) {
+
+		&.mobile-0x-gap {
+			height: 0 !important;
+		}
+	
+		&.mobile-1x-gap {
+			height: var(--wp--style--block-gap) !important;
+		}
+	
+		&.mobile-2x-gap {
+			height: calc( 2 * var(--wp--style--block-gap) ) !important;
+		}
+	
+		&.mobile-3x-gap {
+			height: calc( 3 * var(--wp--style--block-gap) ) !important;
+		}
+	
+		&.mobile-4x-gap {
+			height: calc( 4 * var(--wp--style--block-gap) ) !important;
+		}
+	}
+}

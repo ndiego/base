@@ -1,0 +1,46 @@
+/* List
+ ----------------------------------------------------------------------------- */
+
+.wp-block-list {
+    padding-inline-start: 1.25rem;
+
+    li {
+        padding-left: .25rem;
+        margin: 0;
+        
+        ol, ul {
+            margin-block-start: 0.5rem;
+            margin-block-end: 0.5rem;
+        }  
+    }
+}
+
+ul.wp-block-list {
+    li {
+        list-style-type: disc;
+
+        &:not(:last-child) {
+            margin-block-end: .25rem;
+        }
+    }
+}
+
+ol.wp-block-list {
+    li:not(:last-child) {
+        margin-block-end: .5rem;
+    }
+}
+
+/* List styles */
+// ul {
+// 	padding-inline-start: var(--wp--preset--spacing--30);
+// 	list-style-type: disc;
+// }
+
+// ol {
+// 	padding-inline-start: var(--wp--preset--spacing--30);
+// }
+
+// li {
+// 	padding-left: .25rem;
+// }

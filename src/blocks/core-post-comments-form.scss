@@ -1,0 +1,91 @@
+/* Post Comments Form
+ ----------------------------------------------------------------------------- */
+
+.wp-block-post-comments-form {
+
+    // Mock blockGap on the comment form.
+    .comment-form {
+        display: flex;
+        flex-direction: column;
+        margin-top: var(--wp--preset--spacing--30);
+
+        &> * {
+            margin-block-start: 0;
+            margin-block-end: var(--wp--preset--spacing--10);
+        }
+    
+        &> * + * {
+            margin-block-start: var(--wp--preset--spacing--10);
+            margin-block-end: 0;
+        }
+    }
+
+    .comment-reply-title {
+        font-size: var(--wp--preset--font-size--x-large);
+        margin: 0;
+
+        small {
+            display: block;
+            font-size: var(--wp--preset--font-size--medium);
+            font-weight: 400;
+            margin-top: 0.4rem;
+        }
+    }
+
+    .comment-form-cookies-consent {
+        align-items: center;
+
+        label {
+            font-size: var(--wp--preset--font-size--small);
+        }
+
+        #wp-comment-cookies-consent {
+            margin: 0 0.5rem 0 0;
+        }
+    }
+
+    .form-submit.wp-block-button {
+        margin-top: var(--wp--preset--spacing--30);
+    }
+    
+    // For when Akismet is active. 
+    .akismet_comment_form_privacy_notice {
+        font-size: var(--wp--preset--font-size--small);
+        margin-top: var(--wp--preset--spacing--medium);
+    }
+}
+
+
+// .comment-reply-title {
+// 	display: flex;
+// 	font-size: var(--wp--preset--font-size--x-large);
+// 	justify-content: space-between;
+// 	margin: 0;
+// }
+
+// .comment-reply-title :where(small) a {
+// 	color: var(--wp--preset--color--theme-5);
+// 	font-size: 90%;
+// 	font-weight: normal;
+// 	text-decoration: none;
+// }
+
+// .comment-reply-title :where(small) a:hover {
+// 	color: var(--wp--preset--color--theme-6);
+// }
+
+// .logged-in-as,
+// .comment-notes,
+// .required-field-message {
+// 	display: block;
+// 	font-size: var(--wp--preset--font-size--small);
+// }
+
+// .required-field-message {
+// 	color: var(--wp--preset--color--theme-5);
+// 	margin-top: calc( var(--wp--preset--spacing--10) * 0.5 );
+// }
+
+// .comment-form-cookies-consent {
+// 	align-items: start;
+// }

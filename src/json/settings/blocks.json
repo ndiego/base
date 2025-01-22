@@ -1,0 +1,10 @@
+{
+    "blocks": {
+        "core/image": {
+            "lightbox": {
+                "enabled": true
+            }
+        }
+    },
+    "appearanceTools": true
+} 

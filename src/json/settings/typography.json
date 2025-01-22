@@ -1,0 +1,86 @@
+{
+    "typography": {
+        "defaultFontSizes": false,
+        "dropCap": false,
+        "fluid": true,
+        "fontFamilies": [
+            {
+                "fontFace": [
+                    {
+                        "fontFamily": "Geist",
+                        "fontStretch": "normal",
+                        "fontStyle": "normal",
+                        "fontWeight": "100 800",
+                        "src": [
+                            "file:./assets/fonts/geist/GeistVariable.woff2"
+                        ]
+                    }
+                ],
+                "fontFamily": "\"Geist\", serif",
+                "name": "Geist",
+                "slug": "geist"
+            },
+            {
+                "fontFace": [
+                    {
+                        "fontFamily": "Geist Mono",
+                        "fontStretch": "normal",
+                        "fontStyle": "normal",
+                        "fontWeight": "100 800",
+                        "src": [
+                            "file:./assets/fonts/geist/GeistMonoVariable.woff2"
+                        ]
+                    }
+                ],
+                "fontFamily": "\"Geist Mono\", monospace",
+                "name": "Geist Mono",
+                "slug": "geist-mono"
+            }
+        ],
+        "fontSizes": [
+            {
+                "fluid": false,
+                "name": "Small",
+                "size": "0.885rem",
+                "slug": "small"
+            },
+            {
+                "fluid": {
+                    "max": "1rem",
+                    "min": "0.925rem"
+                },
+                "name": "Medium",
+                "size": "1rem",
+                "slug": "medium"
+            },
+            {
+                "fluid": {
+                    "max": "1.125rem",
+                    "min": "1.075rem"
+                },
+                "name": "Large",
+                "size": "1.125rem",
+                "slug": "large"
+            },
+            {
+                "fluid": {
+                    "max": "1.25rem",
+                    "min": "1.175rem"
+                },
+                "name": "Extra Large",
+                "size": "1.25rem",
+                "slug": "x-large"
+            },
+            {
+                "fluid": {
+                    "max": "1.5rem",
+                    "min": "1.475rem"
+                },
+                "name": "2X Large",
+                "size": "1.5rem",
+                "slug": "xx-large"
+            }
+        ]
+    },
+    "useRootPaddingAwareAlignments": true
+} 

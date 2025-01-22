@@ -1,0 +1,26 @@
+{
+    "custom": {
+        "border": {
+            "radius": {
+                "default": "6px",
+                "button": "6px"
+            },
+            "color": {
+                "default": "rgba(15, 23, 42, 0.15)"
+            }
+        },
+        "color": {
+            "theme-1-dark": "hsl(0 0% 6%)",
+            "theme-2-dark": "hsl(0 0% 8%)",
+            "theme-3-dark": "color-mix(in srgb, var(--wp--preset--color--theme-1) 15%, var(--wp--preset--color--theme-6) 90%)",
+            "theme-4-dark": "color-mix(in srgb, var(--wp--preset--color--theme-1) 20%, var(--wp--preset--color--theme-6) 80%)",
+            "theme-5-dark": "color-mix(in srgb, var(--wp--preset--color--theme-1) 50%, var(--wp--preset--color--theme-6) 50%)",
+            "theme-6-dark": "hsl(0 0% 100% / 85%)",
+            "accent-1-dark": "color-mix(in srgb, var(--wp--preset--color--theme-1) 25%, var(--wp--preset--color--accent-1) 75%)",
+            "accent-2-dark": "color-mix(in srgb, var(--wp--preset--color--theme-1) 25%, var(--wp--preset--color--accent-2) 75%)"
+        },
+        "transition": {
+            "duration": "200ms"
+        }
+    }
+} 

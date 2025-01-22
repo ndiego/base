@@ -1,0 +1,16 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "Base WordPress theme",
+  "scripts": {
+    "build": "npm run build:styles && npm run build:theme-json",
+    "build:styles": "npm run build:blocks && npm run build:main",
+    "build:blocks": "sass src/blocks/:assets/css/blocks/ --style=compressed --no-source-map",
+    "build:main": "sass src/style.scss:style.css --style=expanded --no-source-map",
+    "build:theme-json": "node scripts/build-theme-json.js",
+    "watch": "sass --watch src/:. --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.69.7"
+  }
+} 

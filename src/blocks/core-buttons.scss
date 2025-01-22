@@ -1,0 +1,49 @@
+/* Buttons
+ ----------------------------------------------------------------------------- */
+
+ .wp-block-button {
+    
+    // Custom styles for when inline-code is placed in buttons.
+    .wp-block-button__link > code {
+        color: inherit;
+        background-color: transparent;
+        font-size: .8em;
+        opacity: 0.6;
+        padding: 0;
+        text-transform: none;
+    }
+
+    /* Block Style: Filled
+     --------------------------------------------- */
+
+    // &:not(.is-style-outline) .wp-block-button__link {
+    //     &.has-secondary-background-color:hover {
+    //         background-color: color-mix(in srgb, var(--wp--preset--color--secondary) 90%, var(--wp--preset--color--neutral) 10%) !important;
+    //     }
+
+    //     &.has-tertiary-background-color:hover {
+    //         background-color: color-mix(in srgb, var(--wp--preset--color--tertiary) 90%, var(--wp--preset--color--neutral) 10%) !important;
+    //     }
+    // }
+
+    /* Block Style: Outline
+     --------------------------------------------- */
+
+    // &.is-style-outline .wp-block-button__link {
+    //     // This forces buttons with outline styling to inherit the color of the button.
+    //     // This is needed due to our button styling in theme.json.
+    //     border-color: var(--wp--preset--color--neutral-300);
+    //     border-width: 1px;
+    //     padding: .8em 1.2em;
+
+    //     &.has-neutral-color {
+    //         border-color: var(--wp--preset--color--neutral);
+    //     }
+
+    //     &.has-neutral-color:hover {
+    //         background-color: var(--wp--preset--color--neutral) !important;
+    //         border-color: var(--wp--preset--color--neutral);
+    //         color: var(--wp--preset--color--primary) !important;
+    //     }
+    // }
+}

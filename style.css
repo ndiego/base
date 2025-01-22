@@ -1,0 +1,243 @@
+/*
+Theme Name: Base
+Theme URI: https://github.com/ndiego/base
+Author: Nick Diego
+Author URI: https://nickdiego.com
+Description: 
+Requires at least: 6.7
+Tested up to: 6.7
+Requires PHP: 7.0
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: base
+*/
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark styles */
+.dark-theme body {
+	--wp--preset--color--theme-1: var(--wp--custom--color--theme-1-dark);
+	--wp--preset--color--theme-2: var(--wp--custom--color--theme-2-dark);
+	--wp--preset--color--theme-3: var(--wp--custom--color--theme-3-dark);
+	--wp--preset--color--theme-4: var(--wp--custom--color--theme-4-dark);
+	--wp--preset--color--theme-5: var(--wp--custom--color--theme-5-dark);
+	--wp--preset--color--theme-6: var(--wp--custom--color--theme-6-dark);
+	--wp--preset--color--accent-1: var(--wp--custom--color--accent-1-dark);
+	--wp--preset--color--accent-2: var(--wp--custom--color--accent-2-dark);
+	--wp--custom--border--color--default: rgba(249, 250, 251, 0.30);
+}
+
+h1,
+h2,
+h3,
+h4,
+blockquote {
+	text-wrap: balance;
+}
+
+/* Make bold styles look a bit nicer. */
+strong {
+	font-weight: 600;
+}
+
+/* Inline code and keyboard input styles. Need to explicitly exclude the Code block. */
+p > code,
+li > code,
+kbd {
+	background-color: var(--wp--preset--color--theme-3);
+	border-radius: 4px;
+	font-family: var(--wp--preset--font-family--geist-mono);
+	font-size: 85%;
+	padding: .25rem .375rem;
+	box-sizing: border-box;
+}
+
+/* Image borders */
+.wp-block-image:not(.has-caption):not(.block-editor-block-list__block),
+.wp-block-image .wp-block-image-container,
+.wp-block-image .components-resizable-box__container,
+.wp-lightbox-overlay .wp-block-image,
+.wp-block-video,
+.wp-block-media-text__media,
+.wp-block-jetpack-image-compare,
+.jetpack-videopress-player__wrapper {
+  position: relative;
+}
+
+.wp-block-media-text__media {
+  border-radius: var(--wp--custom--border--radius--default);
+  overflow: hidden;
+}
+
+.wp-block-image:not(.has-caption):not(.block-editor-block-list__block)::before,
+.wp-block-image .wp-block-image-container::before,
+.wp-block-image .components-resizable-box__container::before,
+.wp-lightbox-overlay .wp-block-image::before,
+.wp-block-video::before,
+.wp-block-media-text__media::before,
+.wp-block-jetpack-image-compare::before,
+.jetpack-videopress-player__wrapper::before {
+  border-radius: var(--wp--custom--border--radius--default);
+  border: 1px solid var(--wp--custom--border--color--default);
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+/* Don't show the border on fullwidth images. */
+.single .wp-block-image.alignfull::before {
+	display: none;
+}  
+
+/* Utility class to remove image borders. */
+.has-no-border::before,
+.has-no-border .wp-block-image-container::before,
+.has-no-border .wp-block-media-text__media::before,
+.has-no-border .components-resizable-box__container::before {
+  border-color: transparent !important;
+}
+
+/* Remove image border on mobile. */
+@media (max-width: 782px) {
+  .has-no-mobile-border img {
+    border: none !important;
+  }
+}
+
+/* Custom color for the * indicator in forms. */
+span.required {
+	color: var(--wp--preset--color--accent-2);
+	font-family: var(--wp--preset--font-family--geist);
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: 600;
+}
+
+/* Truncate utility class. */
+
+/* .truncate {
+	white-space: nowrap;
+	max-width: 75%;
+}
+
+.truncate a {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+} */
+
+/* Links & Buttons */
+
+a:where(:not(.wp-element-button)) {
+	text-underline-offset: 2px;
+}
+
+.no-underline,
+.no-underline a {
+	/* For blocks that do not properly remove underlines. */
+	text-decoration: none !important;
+}
+
+.wp-element-button {
+	/* Simple transition for button. */
+	transition: background-color var(--wp--custom--transition--duration) ease-out, color var(--wp--custom--transition--duration) ease-out;
+
+	@media (prefers-reduced-motion: reduce) {
+		/* Reduce motion per user preference. */
+		transition: none;
+	}
+}
+
+/* Fields */
+
+label {
+	color: var(--wp--preset--color--theme-6);
+	display: inline-block;
+	font-size: var(--wp--preset--font-size--small);
+	margin-bottom: calc( var(--wp--preset--spacing--10) * 0.5);
+}
+
+textarea,
+input:not([type=submit]):not([type=checkbox]) {
+	background-color: var(--wp--preset--color--theme-1);
+	border-color: var(--wp--preset--color--theme-4);
+	border-radius: var(--wp--custom--border--radius--default);
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: none;
+	box-sizing: border-box;
+	color: var(--wp--preset--color--theme-6);
+	font-size: var(--wp--preset--font-size--medium);
+	font-family: inherit;
+	line-height: 1.5;
+	min-height: 40px;
+	padding: 8px 12px;
+	width: 100%;
+}
+
+input::placeholder {
+	color: var(--wp--preset--color--theme-5);
+}
+
+input[type=submit] {
+	width: 100%;
+}
+
+textarea:focus-visible,
+input:not([type=submit]):focus-visible {
+	outline: 1px solid var(--wp--preset--color--theme-5);
+}
+
+/* VideoPress */
+
+.wp-block-jetpack-videopress iframe {
+	display: block;
+	border-radius: var(--wp--custom--border--radius--default);
+}
+
+.wp-block-jetpack-videopress {
+	/* CSS in third party blocks is not supported yet — https://github.com/WordPress/gutenberg/issues/48439 */
+	margin-top: var(--wp--preset--spacing--30);
+	margin-bottom: var(--wp--preset--spacing--30);
+	overflow: hidden;
+}
+
+/* Lightbox */
+
+.wp-lightbox-overlay .close-button:focus {
+	outline: none;
+}
+
+.wp-lightbox-overlay .close-button svg {
+	height: 24px;
+	width: 24px;
+}
+
+
+/* Jetpack Social */
+
+.sd-like {
+	/* Add more spacing to Jetpack likes */
+	margin-top: var(--wp--preset--spacing--40);
+}
+
+.sd-title {
+	/* Hide the "Like this" label from Jetpack Social. */
+	display: none !important;
+}
+
+/* Blank template */
+
+.page-template-blank .wp-site-blocks {
+	/* Zero out padding on blank template. */
+	padding: 0;
+}

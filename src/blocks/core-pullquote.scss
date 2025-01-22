@@ -1,0 +1,19 @@
+/* Pull Quote
+ ----------------------------------------------------------------------------- */
+
+.wp-block-pullquote {
+    // We have to set the background directly due to bug.
+    background-color: var(--wp--preset--color--neutral-100) !important;
+    margin-bottom: 0;
+    padding: calc(2 * var(--wp--style--block-gap));
+
+    blockquote {
+        margin: 0;
+    }
+
+    p {
+        font-size: inherit;
+        line-height: inherit;
+        margin: 0;
+    }
+}
