@@ -1,48 +1,52 @@
 {
-    "spacing": {
-        "defaultSpacingSizes": false,
-        "spacingScale": {
-            "theme": {
-                "steps": 0
-            }
-        },
-        "spacingSizes": [
-            {
-                "name": "Extra Small",
-                "size": "8px",
-                "slug": "10"
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "settings": {
+        "spacing": {
+            "defaultSpacingSizes": false,
+            "spacingScale": {
+                "theme": {
+                    "steps": 0
+                }
             },
-            {
-                "name": "Small",
-                "size": "16px",
-                "slug": "20"
-            },
-            {
-                "name": "Medium",
-                "size": "24px",
-                "slug": "30"
-            },
-            {
-                "name": "Large",
-                "size": "32px",
-                "slug": "40"
-            },
-            {
-                "name": "Extra Large",
-                "size": "48px",
-                "slug": "50"
-            },
-            {
-                "name": "2X Extra Large",
-                "size": "60px",
-                "slug": "60"
-            },
-            {
-                "name": "3X Extra Large",
-                "size": "72px",
-                "slug": "70"
-            }
-        ],
-        "units": [ "%", "px", "rem", "vh", "vw" ]
+            "spacingSizes": [
+                {
+                    "name": "Extra Small",
+                    "size": "8px",
+                    "slug": "10"
+                },
+                {
+                    "name": "Small",
+                    "size": "16px",
+                    "slug": "20"
+                },
+                {
+                    "name": "Medium",
+                    "size": "24px",
+                    "slug": "30"
+                },
+                {
+                    "name": "Large",
+                    "size": "32px",
+                    "slug": "40"
+                },
+                {
+                    "name": "Extra Large",
+                    "size": "48px",
+                    "slug": "50"
+                },
+                {
+                    "name": "2X Extra Large",
+                    "size": "60px",
+                    "slug": "60"
+                },
+                {
+                    "name": "3X Extra Large",
+                    "size": "72px",
+                    "slug": "70"
+                }
+            ],
+            "units": [ "%", "px", "rem", "vh", "vw" ]
+        }
     }
 } 

@@ -1,6 +1,10 @@
 {
-    "layout": {
-        "contentSize": "600px",
-        "wideSize": "1000px"
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "$comment": "This is a partial file - settings.layout section only",
+    "settings": {
+        "layout": {
+            "contentSize": "600px",
+            "wideSize": "1000px"
+        }
     }
 } 

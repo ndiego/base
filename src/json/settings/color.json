@@ -1,83 +1,87 @@
 {
-    "color": {
-        "background": true,
-        "custom": true,
-        "defaultDuotone": false,
-        "defaultGradients": false,
-        "defaultPalette": false,
-        "duotone": [
-            {
-                "colors": [ "#000000", "#FFFFFF" ],
-                "slug": "duotone-1",
-                "name": "Duotone 1"
-            },
-            {
-                "colors": [ "#FFFFFF", "#000000" ],
-                "slug": "duotone-2",
-                "name": "Duotone 2"
-            }
-        ],
-        "palette": [
-            {
-                "color": "hsl(0 0% 100%)",
-                "name": "Theme 1",
-                "slug": "theme-1"
-            },
-            {
-                "color": "color-mix(in srgb, var(--wp--preset--color--theme-1) 98%, var(--wp--preset--color--theme-6) 2%)",
-                "name": "Theme 2",
-                "slug": "theme-2"
-            },
-            {
-                "color": "color-mix(in srgb, var(--wp--preset--color--theme-1) 90%, var(--wp--preset--color--theme-6) 10%)",
-                "name": "Theme 3",
-                "slug": "theme-3"
-            },
-            {
-                "color": "color-mix(in srgb, var(--wp--preset--color--theme-1) 80%, var(--wp--preset--color--theme-6) 20%)",
-                "name": "Theme 4",
-                "slug": "theme-4"
-            },
-            {
-                "color": "color-mix(in srgb, var(--wp--preset--color--theme-1) 30%, var(--wp--preset--color--theme-6) 70%)",
-                "name": "Theme 5",
-                "slug": "theme-5"
-            },
-            {
-                "color": "hsl(0 0% 5%)",
-                "name": "Theme 6",
-                "slug": "theme-6"
-            },
-            {
-                "color": "#3858e9",
-                "name": "Accent 1",
-                "slug": "accent-1"
-            },
-            {
-                "color": "#213fd4",
-                "name": "Accent 2",
-                "slug": "accent-2"
-            },
-            {
-                "color": "green",
-                "name": "Accent 3",
-                "slug": "accent-3"
-            },
-            {
-                "color": "yellow",
-                "name": "Accent 4",
-                "slug": "accent-4"
-            },
-            {
-                "color": "purple",
-                "name": "Accent 5",
-                "slug": "accent-5"
-            },
-            {
-                "color": "orange",
-                "name": "Accent 6",
-                "slug": "accent-6"
-            }
-        ]
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "$comment": "This is a partial file - settings.color section only",
+    "settings": {
+        "color": {
+            "background": true,
+            "custom": true,
+            "defaultDuotone": false,
+            "defaultGradients": false,
+            "defaultPalette": false,
+            "duotone": [
+                {
+                    "colors": [ "#000000", "#FFFFFF" ],
+                    "slug": "duotone-1",
+                    "name": "Duotone 1"
+                },
+                {
+                    "colors": [ "#FFFFFF", "#000000" ],
+                    "slug": "duotone-2",
+                    "name": "Duotone 2"
+                }
+            ],
+            "palette": [
+                {
+                    "color": "hsl(0 0% 100%)",
+                    "name": "Theme 1",
+                    "slug": "theme-1"
+                },
+                {
+                    "color": "color-mix(in srgb, var(--wp--preset--color--theme-1) 98%, var(--wp--preset--color--theme-6) 2%)",
+                    "name": "Theme 2",
+                    "slug": "theme-2"
+                },
+                {
+                    "color": "color-mix(in srgb, var(--wp--preset--color--theme-1) 90%, var(--wp--preset--color--theme-6) 10%)",
+                    "name": "Theme 3",
+                    "slug": "theme-3"
+                },
+                {
+                    "color": "color-mix(in srgb, var(--wp--preset--color--theme-1) 80%, var(--wp--preset--color--theme-6) 20%)",
+                    "name": "Theme 4",
+                    "slug": "theme-4"
+                },
+                {
+                    "color": "color-mix(in srgb, var(--wp--preset--color--theme-1) 30%, var(--wp--preset--color--theme-6) 70%)",
+                    "name": "Theme 5",
+                    "slug": "theme-5"
+                },
+                {
+                    "color": "hsl(0 0% 5%)",
+                    "name": "Theme 6",
+                    "slug": "theme-6"
+                },
+                {
+                    "color": "#3858e9",
+                    "name": "Accent 1",
+                    "slug": "accent-1"
+                },
+                {
+                    "color": "#213fd4",
+                    "name": "Accent 2",
+                    "slug": "accent-2"
+                },
+                {
+                    "color": "green",
+                    "name": "Accent 3",
+                    "slug": "accent-3"
+                },
+                {
+                    "color": "yellow",
+                    "name": "Accent 4",
+                    "slug": "accent-4"
+                },
+                {
+                    "color": "purple",
+                    "name": "Accent 5",
+                    "slug": "accent-5"
+                },
+                {
+                    "color": "orange",
+                    "name": "Accent 6",
+                    "slug": "accent-6"
+                }
+            ]
+        }
     }
 } 

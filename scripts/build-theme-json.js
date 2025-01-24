@@ -4,10 +4,26 @@ const path = require('path');
 // Base theme.json structure
 const baseConfig = require('../src/json/base.json');
 
+// Function to extract the relevant data from a settings file
+function extractRelevantData(jsonData) {
+    // Handle root-level settings like useRootPaddingAwareAlignments
+    if (jsonData.settings && !jsonData.settings.typography && !jsonData.settings.color) {
+        return jsonData;
+    }
+    
+    if (jsonData.settings) {
+        return jsonData.settings;
+    } else if (jsonData.styles) {
+        return jsonData.styles;
+    }
+    return jsonData;
+}
+
 // Function to read and parse JSON file
 function readJsonFile(filePath) {
     try {
-        return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        const jsonData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        return extractRelevantData(jsonData);
     } catch (error) {
         console.error(`Error reading ${filePath}:`, error);
         return {};
