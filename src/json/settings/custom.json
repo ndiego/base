@@ -3,7 +3,8 @@
         "border": {
             "radius": {
                 "default": "6px",
-                "button": "6px"
+                "button": "6px",
+                "round": "9999px"
             },
             "color": {
                 "default": "rgba(15, 23, 42, 0.15)"

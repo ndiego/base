@@ -471,7 +471,7 @@
                     },
                     "typography": {
                         "textDecoration": "none",
-                        "lineHeight": "1"
+                        "lineHeight": "1.2"
                     }
                 }
             },
