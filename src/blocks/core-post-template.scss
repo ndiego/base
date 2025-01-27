@@ -1,0 +1,39 @@
+/*
+ * Core Post Template
+ */
+
+.wp-block-post-template {
+
+    /* Event styles (provided by the Base Utilities plugin) */
+    li {
+        &.event {
+            border-bottom: 1px solid var(--wp--preset--color--theme-3);
+            padding-bottom: var(--wp--preset--spacing--20);
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+
+        &.is-featured {
+            background-color: #f6f7fe;
+            border: 1px solid var(--wp--preset--color--theme-3);
+            border-color: color-mix(in srgb, #3858e9 30%, var(--wp--preset--color--theme-2) 70%);
+            border-radius: var(--wp--custom--border--radius--default);
+            padding: var(--wp--preset--spacing--20);
+
+            &:not(:first-of-type) {
+                margin-top: var(--wp--preset--spacing--20);
+            }
+
+            & + li {
+                margin-top: var(--wp--preset--spacing--50);
+            }
+        }
+
+        &.is-upcoming {
+            border-color: color-mix(in srgb, #00a32a 30%, var(--wp--preset--color--theme-2) 70%);
+            background-color: #edfaef;
+        }
+    }
+}

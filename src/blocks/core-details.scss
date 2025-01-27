@@ -1,0 +1,26 @@
+/* Details
+ ----------------------------------------------------------------------------- */
+
+ .wp-block-details {
+    
+    summary { 
+        font-weight: 550;
+
+        // Add more space between the marker and the text.
+        list-style-position: outside;
+        margin-left: var(--wp--preset--spacing--20);
+        padding-left: 4px;
+
+        &::marker {
+            color: var(--wp--preset--color--theme-5);
+        }
+    }
+    
+    & > p { 
+        margin-top: var(--wp--preset--spacing--10); 
+    }
+
+    &[open] {
+        padding-bottom: var(--wp--preset--spacing--20);
+    }
+}

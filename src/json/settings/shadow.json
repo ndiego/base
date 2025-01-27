@@ -1,6 +1,6 @@
 {
     "$schema": "https://schemas.wp.org/trunk/theme.json",
-    "$comment": "This is a partial file - settings.shadow section only",
+    "version": 3,
     "settings": {
         "shadow": {
             "defaultPresets": false,

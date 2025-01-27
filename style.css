@@ -40,8 +40,9 @@ blockquote {
 }
 
 /* Make bold styles look a bit nicer. */
-strong {
-	font-weight: 600;
+strong,
+th {
+	font-weight: 550;
 }
 
 /* Inline code and keyboard input styles. Need to explicitly exclude the Code block. */
@@ -124,7 +125,7 @@ span.required {
 
 /* Truncate utility class. */
 
-/* .truncate {
+.truncate {
 	white-space: nowrap;
 	max-width: 75%;
 }
@@ -133,7 +134,13 @@ span.required {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	max-width: 100%;
-} */
+}
+
+/* Flex utility class. */
+
+.flex-shrink-0 {
+	flex-shrink: 0;
+}
 
 /* Links & Buttons */
 

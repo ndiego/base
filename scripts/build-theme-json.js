@@ -4,26 +4,17 @@ const path = require('path');
 // Base theme.json structure
 const baseConfig = require('../src/json/base.json');
 
-// Function to extract the relevant data from a settings file
-function extractRelevantData(jsonData) {
-    // Handle root-level settings like useRootPaddingAwareAlignments
-    if (jsonData.settings && !jsonData.settings.typography && !jsonData.settings.color) {
-        return jsonData;
-    }
-    
-    if (jsonData.settings) {
-        return jsonData.settings;
-    } else if (jsonData.styles) {
-        return jsonData.styles;
-    }
-    return jsonData;
+// Function to strip schema and version
+function stripMetadata(jsonData) {
+    const { $schema, version, ...cleanData } = jsonData;
+    return cleanData;
 }
 
 // Function to read and parse JSON file
 function readJsonFile(filePath) {
     try {
         const jsonData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        return extractRelevantData(jsonData);
+        return stripMetadata(jsonData);
     } catch (error) {
         console.error(`Error reading ${filePath}:`, error);
         return {};
@@ -52,8 +43,8 @@ function deepMerge(target, source) {
     return target;
 }
 
-// Function to read all JSON files in a directory
-function readJsonDirectory(dirPath) {
+// Function to combine JSON files in a directory
+function combineJsonFiles(dirPath) {
     let result = {};
     
     try {
@@ -64,7 +55,10 @@ function readJsonDirectory(dirPath) {
                 const filePath = path.join(dirPath, file);
                 console.log(`Processing: ${filePath}`);
                 const jsonData = readJsonFile(filePath);
-                result = deepMerge(result, jsonData);
+                
+                // Extract the relevant section (settings or styles)
+                const section = jsonData.settings || jsonData.styles || {};
+                result = deepMerge(result, section);
             }
         });
     } catch (error) {
@@ -77,14 +71,14 @@ function readJsonDirectory(dirPath) {
 // Build final theme.json
 function buildThemeJson() {
     try {
-        // Read settings
+        // Combine all settings files
         console.log('Processing settings...');
-        const settings = readJsonDirectory(path.join(__dirname, '../src/json/settings'));
+        const settings = combineJsonFiles(path.join(__dirname, '../src/json/settings'));
         baseConfig.settings = settings;
 
-        // Read styles
+        // Combine all styles files
         console.log('Processing styles...');
-        const styles = readJsonDirectory(path.join(__dirname, '../src/json/styles'));
+        const styles = combineJsonFiles(path.join(__dirname, '../src/json/styles'));
         baseConfig.styles = styles;
 
         // Write final theme.json with tab indentation

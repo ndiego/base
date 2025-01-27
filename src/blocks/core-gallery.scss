@@ -18,14 +18,14 @@
             &.alignwide {
                 &> figcaption {
                     max-width: unset;
-                    padding-left: var(--wp--style--block-gap);
-                    padding-right: var(--wp--style--block-gap);
+                    padding-left: var(--wp--preset--spacing--30);
+                    padding-right: var(--wp--preset--spacing--30);
                     position: unset;
                 }
             }
 
             &> figcaption {
-                bottom: var(--wp--style--block-gap);
+                bottom: var(--wp--preset--spacing--30);
                 max-width: clamp(10rem, 10vw, 14rem);
                 position: absolute;
                 width: 100%;
@@ -34,14 +34,14 @@
 
         &.is-style-caption-right {
             &> figcaption {
-                right: calc(-1 * clamp(10rem, 10vw, 14rem) - var(--wp--style--block-gap));
+                right: calc(-1 * clamp(10rem, 10vw, 14rem) - var(--wp--preset--spacing--30));
                 text-align: left;
             }
         }
 
         &.is-style-caption-left {
             &> figcaption {
-                left: calc(-1 * clamp(10rem, 10vw, 14rem) - var(--wp--style--block-gap));
+                left: calc(-1 * clamp(10rem, 10vw, 14rem) - var(--wp--preset--spacing--30));
                 text-align: right;
             }
         }

@@ -162,6 +162,63 @@ endif;
 
 add_action( 'comment_form_defaults', 'base_edit_comment_form_defaults' );
 
+if ( ! function_exists( 'base_register_block_styles' ) ) :
+	/**
+	 * Register block styles.
+	 *
+	 * @since 0.1.0
+	 */
+	function base_register_block_styles() {
+
+		$block_styles = array(
+			'core/archives' => array(
+				'horizontal' => __( 'Horizontal', 'base' ),
+			),
+			'core/categories' => array(
+				'horizontal' => __( 'Horizontal', 'base' ),
+				'outline'    => __( 'Outline', 'base' ),
+			),
+			'core/image'      => array(
+				'caption-left'  => __( 'Caption Left', 'base' ),
+				'caption-right' => __( 'Caption Right', 'base' ),
+			),
+			'core/gallery'    => array(
+				'caption-left'  => __( 'Caption Left', 'base' ),
+				'caption-right' => __( 'Caption Right', 'base' ),
+			),
+			'core/post-terms' => array(
+				'outline' => __( 'Outline', 'base' ),
+			),
+			'core/quote' => array(
+				'fancy' => __( 'Fancy', 'base' ),
+			),
+			'core/separator'  => array(
+				'waves' => __( 'Waves', 'base' ),
+			),
+			'core/tag-cloud'  => array(
+				'outline' => __( 'Outline', 'base' ),
+			),
+			'core/post-terms'  => array(
+				'outline' => __( 'Outline', 'base' ),
+			),
+		);
+
+		foreach( $block_styles as $block => $styles ) {
+			foreach ( $styles as $style_name => $style_label ) {
+				register_block_style(
+					$block,
+					array(
+						'name'  => $style_name,
+						'label' => $style_label,
+					)
+				);
+			}
+		}
+	}
+endif;
+
+add_action( 'init', 'base_register_block_styles' );
+
 if ( ! function_exists( 'base_wrap_image_block' ) ) :
 	/**
 	 * Filter the output of an image block to wrap the <img> element in a <span>.

@@ -2,9 +2,6 @@
     "$schema": "https://schemas.wp.org/trunk/theme.json",
     "version": 3,
     "settings": {
-        "layout": {
-            "contentSize": "624px",
-            "wideSize": "1000px"
-        }
+        "useRootPaddingAwareAlignments": true
     }
-} 
+}

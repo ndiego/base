@@ -1,0 +1,30 @@
+/*
+ * Core Table
+ */
+
+.wp-block-table {
+    border-collapse: collapse;
+
+    thead {
+        padding: 0;
+        border: none;
+    }
+    
+    th, td {
+        padding: 0;
+        padding-top: var(--wp--preset--spacing--10);
+        padding-bottom: var(--wp--preset--spacing--10);
+        border: none;
+        text-align: left;
+
+        &:last-child {
+            text-align: right;
+        }
+    }
+
+    tbody {
+        tr {
+            border-top: 1px solid var(--wp--preset--color--theme-3);
+        }
+    }
+}
