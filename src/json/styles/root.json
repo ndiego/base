@@ -10,8 +10,8 @@
             "blockGap": "var(--wp--preset--spacing--20)",
             "padding": {
                 "bottom": "var(--wp--preset--spacing--50)",
-                "left": "var(--wp--preset--spacing--30)",
-                "right": "var(--wp--preset--spacing--30)",
+                "left": "var(--wp--preset--spacing--40)",
+                "right": "var(--wp--preset--spacing--40)",
                 "top": "0"
             }
         },
@@ -19,7 +19,7 @@
             "fontFamily": "var(--wp--preset--font-family--geist)",
             "fontSize": "var(--wp--preset--font-size--medium)",
             "fontWeight": "400",
-            "lineHeight": "1.6"
+            "lineHeight": "1.64"
         }
     }
 } 

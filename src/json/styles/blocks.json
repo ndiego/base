@@ -113,28 +113,32 @@
                 }
             },
             "core/comment-reply-link": {
-                "css": "& a { transition: background-color var(--wp--custom--transition--duration) ease-out, color var(--wp--custom--transition--duration) ease-out, shadow var(--wp--custom--transition--duration) ease-out; }",
+                "css": "& a { transition: all var(--wp--custom--transition--duration) ease-out; }",
                 "elements": {
                     "link": {
                         ":hover": {
                             "color": {
-                                "background": "var(--wp--preset--color--theme-2)"
+                                "background": "var(--wp--preset--color--theme-1)"
                             },
-                            "shadow": "var(--wp--preset--shadow--inset-2)"
+                            "border": {
+                                "color": "var(--wp--preset--color--theme-5)"
+                            }
                         },
                         "border": {
-                            "radius": "var(--wp--custom--border--radius--button)"
+                            "radius": "var(--wp--custom--border--radius--button)",
+                            "width": "1px",
+                            "style": "solid",
+                            "color": "var(--wp--preset--color--theme-4)"
                         },
                         "color": {
                             "text": "var(--wp--preset--color--theme-6)"
                         },
-                        "shadow": "var(--wp--preset--shadow--inset)",
                         "spacing": {
                             "padding": {
-                                "bottom": "7px",
-                                "left": "10px",
-                                "right": "10px",
-                                "top": "7px"
+                                "bottom": "6px",
+                                "left": "12px",
+                                "right": "12px",
+                                "top": "6px"
                             }
                         },
                         "typography": {
@@ -146,7 +150,7 @@
                 },
                 "spacing": {
                     "margin": {
-                        "top": "calc( var(--wp--preset--spacing--30) - 4px) !important"
+                        "top": "var(--wp--preset--spacing--30) !important"
                     }
                 }
             },

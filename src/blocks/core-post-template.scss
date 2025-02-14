@@ -7,33 +7,64 @@
     /* Event styles (provided by the Base Utilities plugin) */
     li {
         &.event {
-            border-bottom: 1px solid var(--wp--preset--color--theme-3);
-            padding-bottom: var(--wp--preset--spacing--20);
+            border-top: 1px solid var(--wp--preset--color--theme-3);
+            padding-top: var(--wp--preset--spacing--20);
 
-            &:last-of-type {
-                border-bottom: none;
+            &:first-of-type {
+                border-top: none;
             }
         }
 
-        &.is-featured {
+        &.is-featured,
+        &.is-sticky > div {
             background-color: #f6f7fe;
             border: 1px solid var(--wp--preset--color--theme-3);
-            border-color: color-mix(in srgb, #3858e9 30%, var(--wp--preset--color--theme-2) 70%);
+            border-top-width: 1px !important;
+            border-top-style: solid !important;
             border-radius: var(--wp--custom--border--radius--default);
             padding: var(--wp--preset--spacing--20);
 
-            &:not(:first-of-type) {
-                margin-top: var(--wp--preset--spacing--20);
+            margin-top: var(--wp--preset--spacing--30);
+            margin-bottom: var(--wp--preset--spacing--30);
+            margin-left: calc(var(--wp--preset--spacing--20) * -1);
+            margin-right: calc(var(--wp--preset--spacing--20) * -1);
+        }
+
+        &.is-featured {
+            border-color: color-mix(in srgb, #3858e9 30%, var(--wp--preset--color--theme-2) 70%) !important;
+
+            & + li:not(.is-featured):not(.is-upcoming) {
+                margin-top: 0;
+                border-top: none;
+                padding-top: 0;
             }
 
-            & + li {
-                margin-top: var(--wp--preset--spacing--50);
+            &.is-upcoming {
+                border-color: color-mix(in srgb, #00a32a 30%, var(--wp--preset--color--theme-2) 70%) !important;
+                background-color: #edfaef;
+            }
+
+            // Dark theme styles
+            .dark-theme & {
+                background-color: #1a1d33;
+                border-color: color-mix(in srgb, #4b6bff 30%, var(--wp--preset--color--theme-2) 70%) !important;
+
+                &.is-upcoming {
+                    background-color: #1a2922;
+                    border-color: color-mix(in srgb, #2ecc71 30%, var(--wp--preset--color--theme-2) 70%) !important;
+                }
             }
         }
 
-        &.is-upcoming {
-            border-color: color-mix(in srgb, #00a32a 30%, var(--wp--preset--color--theme-2) 70%);
-            background-color: #edfaef;
+        &.is-sticky > div {
+            border-color: color-mix(in srgb, #e44d26 30%, var(--wp--preset--color--theme-2) 70%) !important;
+            background-color: #fef6f5;
+
+            // Dark theme styles
+            .dark-theme & {
+                background-color: #2a1d1a;
+                border-color: color-mix(in srgb, #ff6b4b 30%, var(--wp--preset--color--theme-2) 70%) !important;
+            }
         }
     }
 }

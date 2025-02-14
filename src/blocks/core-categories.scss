@@ -55,27 +55,28 @@
         gap: var(--wp--preset--spacing--10);
 
         li {
-            background-color: var(--wp--preset--color--theme-1);
+            background-color: var(--wp--preset--color--theme-2);
             border: 1px solid var(--wp--preset--color--theme-4);
-            border-radius: var(--wp--custom--border--radius--button);
+            border-radius: var(--wp--custom--border--radius--round);
             cursor: pointer;
             display: inline-block;
             font-size: var(--wp--preset--font-size--small) !important;
             font-weight: normal;
-            line-height: var(--wp--custom--typography--line-height--small);
-            padding-right: 1.2em;
-            transition: box-shadow var(--wp--custom--transition--duration) ease-out;
+            line-height: 1.2;
+            padding-right: calc(var(--wp--preset--spacing--10) * 1.5);
+            padding-right: 12px;
+            transition: background-color var(--wp--custom--transition--duration) ease-out;
 
             a {
-                color: var(--wp--preset--color--primary);
+                color: var(--wp--preset--color--theme-6);
                 display: inline-block;
-                padding: .8em 0 .8em 1.2em;
+                padding: 6px 0 6px 12px;
                 text-decoration: none;
                 text-transform: none;
             }
 
             &:hover {
-                box-shadow: var(--wp--preset--shadow--x-small);
+                background-color: var(--wp--preset--color--theme-1);
 
                 a {
                     text-decoration: none;

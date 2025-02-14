@@ -246,3 +246,51 @@ if ( ! function_exists( 'base_wrap_image_block' ) ) :
 endif;
 
 add_filter( 'render_block_core/image', 'base_wrap_image_block', 10, 2 );
+
+if ( ! function_exists( 'base_add_sticky_class' ) ) :
+	/**
+	 * Add is-sticky class to sticky posts
+	 *
+	 * @since 0.1.0
+	 *
+	 * @param array $classes Array of post classes.
+	 * @return array Modified array of post classes.
+	 */
+	function base_add_sticky_class( $classes ) {
+		if ( is_sticky() ) {
+			$classes[] = 'is-sticky';
+		}
+		return $classes;
+	}
+endif;
+
+add_filter( 'post_class', 'base_add_sticky_class' );
+
+if ( ! function_exists( 'base_restrict_block_editor_patterns_from_dotcom_library' ) ) :
+	/**
+	 * Restrict patterns from the Dotcom library.
+	 *
+	 * @since 0.1.0
+	 */
+	function base_restrict_block_editor_patterns_from_dotcom_library() {
+	   return 'disable-dotcom-patterns-source';
+	}
+endif;
+ 
+add_filter( 'a8c_override_patterns_source_site', 'base_restrict_block_editor_patterns_from_dotcom_library' );
+
+if ( ! function_exists( 'base_exclude_current_post_from_latest_posts' ) ) :
+	/**
+	 * Exclude the current post from the latest posts query.
+	 * Only applies to single blog post templates.
+	 *
+	 * @since 0.1.0
+	 */
+	function base_exclude_current_post_from_latest_posts( $query ) {
+		if ( ! is_admin() && is_singular( 'post' ) ) {
+			$query->set( 'post__not_in', array( get_the_ID() ) );
+		}
+	}
+endif;
+
+add_action('pre_get_posts', 'base_exclude_current_post_from_latest_posts');

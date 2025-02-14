@@ -1,0 +1,40 @@
+/*
+ * Jetpack Contact Form
+ */
+
+.wp-block-jetpack-contact-form {
+    padding: 0;
+
+    label,
+    .jetpack-field-label__input {
+        font-weight: 550 !important;
+        line-height: 1.64;
+    }
+
+    label.consent,
+    .jetpack-field-consent .jetpack-field-label .jetpack-field-label__input {
+        font-size: var(--wp--preset--font-size--small) !important;
+        font-weight: normal !important;
+        text-transform: none !important;
+    }
+
+    .contact-form__input-error {
+        font-size: var(--wp--preset--font-size--small);
+
+        .contact-form__warning-icon {
+            display: none;
+        }
+    }
+
+    .contact-form__error {
+        display: none;
+    }
+
+    .grunion-field-textarea-wrap {
+        line-height: 0;
+    }
+
+    .wp-block-jetpack-button {
+        flex-basis: content;
+    }
+}

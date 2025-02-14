@@ -107,7 +107,8 @@
                 },
                 "typography": {
                     "textDecoration": "none"
-                }
+                },
+                "css": "transition: color calc(var(--wp--custom--transition--duration) * 0.5) ease-out"
             }
         }
     }

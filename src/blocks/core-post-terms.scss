@@ -4,8 +4,26 @@
 .wp-block-post-terms {
 
     .wp-block-post-terms__separator {
-        color: var(--wp--preset--color--primary-light);
+        color: var(--wp--preset--color--theme-4);
         margin-right: 0.2em;
+    }
+    
+    &:not(.is-style-outline) {
+        .wp-block-post-terms__separator {
+            visibility: hidden; /* Hides the original comma */
+            position: relative;
+            display: inline-block;
+            width: 18px;
+        }
+
+        .wp-block-post-terms__separator::after {
+            content: "•"; /* Inserts a bullet in place of the comma */
+            visibility: visible;
+            position: absolute;
+            color: var(--wp--preset--color--theme-4);
+            margin: 0 7px;
+            left: 0;
+        }
     }
 
     /* Block Style: Outline
@@ -13,7 +31,7 @@
     &.is-style-outline {
         a,
         span:not(.rich-text):not(.wp-block-post-terms__separator):not([data-rich-text-placeholder]) {
-            background-color: var(--wp--preset--color--theme-1);
+            background-color: var(--wp--preset--color--theme-2);
             border: 1px solid var(--wp--preset--color--theme-4);
             border-radius: var(--wp--custom--border--radius--round);
             color: var(--wp--preset--color--primary);
@@ -21,12 +39,14 @@
             font-size: var(--wp--preset--font-size--small);
             font-weight: normal;
             line-height: 1.2;
-            padding: var(--wp--preset--spacing--10) calc(var(--wp--preset--spacing--10) * 1.5);
+            padding: 6px 12px;
             text-decoration: none;
             text-transform: none;
+            transition: all var(--wp--custom--transition--duration) ease-out;
 
             &:hover {
-                box-shadow: var(--wp--preset--shadow--x-small);
+                background-color: var(--wp--preset--color--theme-1);
+                border-color: var(--wp--preset--color--theme-5);
                 text-decoration: none;
             }
         }

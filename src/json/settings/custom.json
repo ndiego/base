@@ -5,8 +5,8 @@
         "custom": {
             "border": {
                 "radius": {
-                    "default": "6px",
-                    "button": "6px",
+                    "default": "8px",
+                    "button": "9999px",
                     "round": "9999px"
                 },
                 "color": {
