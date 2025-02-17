@@ -9,9 +9,11 @@
     "build:main": "sass src/style.scss:style.css --style=expanded --no-source-map",
     "build:theme-json": "node scripts/build-theme-json.js",
     "watch": "sass --watch src/:. --no-source-map",
-    "watch:blocks": "sass --watch src/blocks/:assets/css/blocks/ --style=compressed --no-source-map"
+    "watch:blocks": "sass --watch src/blocks/:assets/css/blocks/ --style=compressed --no-source-map",
+    "watch:theme-json": "nodemon --watch src/json --ext json --exec 'npm run build:theme-json'"
   },
   "devDependencies": {
+    "nodemon": "^3.1.9",
     "sass": "^1.69.7"
   }
-} 
+}

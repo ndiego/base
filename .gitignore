@@ -1,0 +1,16 @@
+# Dependencies
+/node_modules
+/vendor
+
+# Environment files
+.env
+.env.*
+
+# Editor files
+.DS_Store
+.vscode
+
+# Cache files
+.sass-cache
+*.css.map
+*.js.map 

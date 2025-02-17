@@ -135,25 +135,6 @@ span.required {
 	font-weight: 600;
 }
 
-/* Truncate utility class. */
-
-.truncate {
-	white-space: nowrap;
-	max-width: 75%;
-}
-
-.truncate a {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	max-width: 100%;
-}
-
-/* Flex utility class. */
-
-.flex-shrink-0 {
-	flex-shrink: 0;
-}
-
 /* Links & Buttons */
 
 a:where(:not(.wp-element-button)) {
@@ -208,27 +189,9 @@ input::placeholder {
 	color: var(--wp--preset--color--theme-5);
 }
 
-/* input[type=submit] {
-	width: 100%;
-} */
-
 textarea:focus-visible,
 input:not([type=submit]):focus-visible {
 	outline: 1px solid var(--wp--preset--color--theme-5);
-}
-
-/* VideoPress */
-
-.wp-block-jetpack-videopress iframe {
-	display: block;
-	border-radius: var(--wp--custom--border--radius--default);
-}
-
-.wp-block-jetpack-videopress {
-	/* CSS in third party blocks is not supported yet — https://github.com/WordPress/gutenberg/issues/48439 */
-	margin-top: var(--wp--preset--spacing--30);
-	margin-bottom: var(--wp--preset--spacing--30);
-	overflow: hidden;
 }
 
 /* Lightbox */
@@ -242,6 +205,16 @@ input:not([type=submit]):focus-visible {
 	width: 24px;
 }
 
+/* Jetpack VideoPress */
+
+.wp-block-jetpack-videopress {
+	overflow: hidden;
+}
+
+.wp-block-jetpack-videopress iframe {
+	display: block;
+	border-radius: var(--wp--custom--border--radius--default);
+}
 
 /* Jetpack Social */
 
@@ -260,4 +233,56 @@ input:not([type=submit]):focus-visible {
 .page-template-blank .wp-site-blocks {
 	/* Zero out padding on blank template. */
 	padding: 0;
+}
+
+/* Custom featured mark */
+
+mark.has-accent-1-color {
+    background-color: #f6f7fe !important;
+    border: 1px solid color-mix(in srgb, #3858e9 30%, var(--wp--preset--color--theme-2) 70%) !important;
+    border-color: color-mix(in srgb, #3858e9 30%, var(--wp--preset--color--theme-2) 70%) !important;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: var(--wp--preset--color--theme-6) !important;
+    font-size: 95%;
+    margin: 0 .1rem;
+    padding: .15rem .35rem;
+}
+
+.dark-theme mark.has-accent-1-color {
+	background-color: #1a1d33 !important;
+	border-color: color-mix(in srgb, #4b6bff 30%, var(--wp--preset--color--theme-2) 70%) !important;
+}
+
+/* Truncate utility class. */
+
+.truncate {
+	white-space: nowrap;
+	max-width: 75%;
+}
+
+.truncate a {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+
+/* Flex utility class. */
+
+.flex-shrink-0 {
+	flex-shrink: 0;
+}
+
+/* Alignment utility classes. */
+
+@media (max-width: 600px) {
+	.mobile-align-left {
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+
+	.mobile-align-right {
+		justify-content: flex-end;
+		align-items: flex-end;
+	}
 }

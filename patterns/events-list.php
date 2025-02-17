@@ -4,7 +4,7 @@
  * Slug: base/events-list
  * Categories: events, featured
  * Block Types: core/query-loop
- * Viewport width: 624
+ * Viewport width: 700
  *
  * @package Base
  */

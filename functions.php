@@ -266,19 +266,6 @@ endif;
 
 add_filter( 'post_class', 'base_add_sticky_class' );
 
-if ( ! function_exists( 'base_restrict_block_editor_patterns_from_dotcom_library' ) ) :
-	/**
-	 * Restrict patterns from the Dotcom library.
-	 *
-	 * @since 0.1.0
-	 */
-	function base_restrict_block_editor_patterns_from_dotcom_library() {
-	   return 'disable-dotcom-patterns-source';
-	}
-endif;
- 
-add_filter( 'a8c_override_patterns_source_site', 'base_restrict_block_editor_patterns_from_dotcom_library' );
-
 if ( ! function_exists( 'base_exclude_current_post_from_latest_posts' ) ) :
 	/**
 	 * Exclude the current post from the latest posts query.
@@ -294,3 +281,20 @@ if ( ! function_exists( 'base_exclude_current_post_from_latest_posts' ) ) :
 endif;
 
 add_action('pre_get_posts', 'base_exclude_current_post_from_latest_posts');
+
+if ( ! function_exists( 'base_search_posts_only' ) ) :
+	/**
+	 * Modify search results to only show posts.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @param WP_Query $query The WP_Query instance (passed by reference).
+	 */
+	function base_search_posts_only( $query ) {
+		if ( $query->is_search() && $query->is_main_query() && ! is_admin() ) {
+			$query->set( 'post_type', 'post' );
+		}
+	}
+endif;
+
+add_action( 'pre_get_posts', 'base_search_posts_only' );
