@@ -273,6 +273,14 @@ mark.has-accent-1-color {
 	flex-shrink: 0;
 }
 
+@media (max-width: 600px) {
+	.has-mobile-row-reverse {
+		flex-direction: column-reverse;
+		flex-wrap: wrap;
+		gap: 2px;
+	}
+}
+
 /* Alignment utility classes. */
 
 @media (max-width: 600px) {

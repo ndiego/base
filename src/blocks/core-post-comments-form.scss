@@ -58,6 +58,7 @@
     
     // For when Akismet is active. 
     .akismet_comment_form_privacy_notice {
+        display: none;
         font-size: var(--wp--preset--font-size--small);
         margin-top: var(--wp--preset--spacing--medium);
     }
@@ -66,38 +67,3 @@
         width: fit-content;
     }
 }
-
-
-// .comment-reply-title {
-// 	display: flex;
-// 	font-size: var(--wp--preset--font-size--x-large);
-// 	justify-content: space-between;
-// 	margin: 0;
-// }
-
-// .comment-reply-title :where(small) a {
-// 	color: var(--wp--preset--color--theme-5);
-// 	font-size: 90%;
-// 	font-weight: normal;
-// 	text-decoration: none;
-// }
-
-// .comment-reply-title :where(small) a:hover {
-// 	color: var(--wp--preset--color--theme-6);
-// }
-
-// .logged-in-as,
-// .comment-notes,
-// .required-field-message {
-// 	display: block;
-// 	font-size: var(--wp--preset--font-size--small);
-// }
-
-// .required-field-message {
-// 	color: var(--wp--preset--color--theme-5);
-// 	margin-top: calc( var(--wp--preset--spacing--10) * 0.5 );
-// }
-
-// .comment-form-cookies-consent {
-// 	align-items: start;
-// }
