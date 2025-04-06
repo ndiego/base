@@ -47,6 +47,7 @@ th {
 
 /* Inline code and keyboard input styles. Need to explicitly exclude the Code block. */
 p > code,
+li > div > code,
 li > code {
 	background-color: var(--wp--preset--color--theme-3);
 	border-radius: 4px;
@@ -228,6 +229,32 @@ input:not([type=submit]):focus-visible {
 	display: none !important;
 }
 
+/* Jetpack Subscribe */
+
+.wp-block-jetpack-subscriptions__form-elements input {
+	font-size: var(--wp--preset--font-size--small) !important;
+	padding: 8px 16px !important;
+	line-height: 1.5 !important;
+    border-radius: var(--wp--custom--border--radius--button) !important;
+	border: 1px solid var(--wp--preset--color--theme-4) !important;
+}
+
+.wp-block-jetpack-subscriptions__form-elements #subscribe-submit {
+	min-width: 30% !important;
+	width: auto !important;
+	flex-shrink: 0;
+}
+
+.wp-block-jetpack-subscriptions__form-elements .wp-block-button__link {
+	font-size: var(--wp--preset--font-size--small) !important;
+	padding: 8px 12px !important;
+	margin-left: var(--wp--preset--spacing--10) !important;
+	width: 100% !important;
+	line-height: 1.5 !important;
+    border-radius: var(--wp--custom--border--radius--button) !important;
+	height: 40px !important;
+}
+
 /* Blank template */
 
 .page-template-blank .wp-site-blocks {
@@ -277,7 +304,7 @@ mark.has-accent-1-color {
 	.has-mobile-row-reverse {
 		flex-direction: column-reverse;
 		flex-wrap: wrap;
-		gap: 2px;
+		gap: var(--wp--preset--spacing--10);
 	}
 }
 

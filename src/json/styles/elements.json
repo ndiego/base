@@ -6,7 +6,7 @@
             "button": {
                 ":hover": {
                     "color": {
-                        "background": "color-mix(in srgb, var(--wp--preset--color--theme-6) 90%, var(--wp--preset--color--theme-1) 10%)"
+                        "background": "color-mix(in srgb, var(--wp--preset--color--theme-6) 90%, var(--wp--preset--color--theme-1) 10%) !important"
                     }
                 },
                 "border": {
