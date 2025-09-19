@@ -36,11 +36,3 @@ Geist & Geist Mono Fonts
 Copyright 2023 Vercel, made in collaboration with basement.studio
 License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
 Source: https://vercel.com/font
-
-=== Images ===
-
-spring.webp - https://www.rawpixel.com/image/8689361/image-cloud-tree-public-domain
-License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
-
-screenshot.png avatar - https://rich.blog
-License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
